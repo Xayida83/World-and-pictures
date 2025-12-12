@@ -1,0 +1,133 @@
+
+/* =======================
+   CSS Variabler
+   ======================= */
+   :root {
+    /* Havfärg */
+    --water-color: #000;
+}
+
+/* Hela viewporten */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background: var(--water-color);
+    overflow: hidden;
+}
+
+/* TOPP – rubriken */
+.container-heading{ 
+  height: 5rem;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.heading-text{
+  color: #ffe500;
+  margin: 0;
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0 0 0 30%;
+}
+
+.logo-container {
+  width: 3em;
+}
+.logo {
+  width: 3rem;
+  aspect-ratio: 1 / 1;
+}
+
+/* RESTEN AV SIDAN – kartytan */
+.map-wrapper {
+    flex: 1 1 auto;      
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: var(--water-color);
+}
+
+/* Största möjliga 16:9 som får plats i map-wrapper */
+.map-inner {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/* Karta + canvas fyller 16:9-rutan */
+.map-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.map-container svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+}
+
+#pointCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 5;
+    opacity: 1;
+    /* Storlek och position sätts dynamiskt via JavaScript för att matcha SVG exakt */
+}
+
+/* OBS: Prickar renderas på canvas via JavaScript, inte som DOM-element */
+/* CSS-variablerna ovan används inte längre men kan behållas för referens */
+
+.map-wrapper {
+    position: relative;
+}
+
+.map-wrapper::before {
+    content: '';
+    display: block;
+}
+
+.container::before {
+    content: '';
+    display: block;
+}
+
+/* Räknare för antal ljus */
+.lights-counter {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: #ffe500;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-weight: 600;
+    text-shadow: 
+        0 0 10px rgba(255, 229, 0, 0.8),
+        0 0 20px rgba(255, 229, 0, 0.5),
+        0 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+#lightsAmount {
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 
+        0 0 15px rgba(255, 255, 255, 0.9),
+        0 0 25px rgba(255, 255, 255, 0.6);
+}
+

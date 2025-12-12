@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min Webbsida</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="container-heading">
+      <div class="heading-text">Tänd ett ljus för fred!</div>
+      <div class="logo-container">
+        <img class="logo" src="https://content.adoveodemo.com/1732720287658_actsvenskakyrkanlogorgb.png">
+      </div>
+    </div>
+  
+    <div class="map-wrapper">
+      <div class="map-inner">
+        <div class="map-container" id="mapContainer">
+          <!-- SVG map will be loaded here via JavaScript -->
+        </div>
+        <canvas id="pointCanvas"></canvas>
+      </div>
+      <div class="lights-counter" id="lightsCounter">
+        Nu lyser det <span id="lightsAmount">0</span> ljus i världen.
+      </div>
+    </div>
+  </div>
+  
+    <script src="script.js"></script>
+</body>
+</html>
+
